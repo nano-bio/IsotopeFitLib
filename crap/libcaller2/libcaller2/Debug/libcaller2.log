@@ -1,0 +1,2 @@
+﻿gunga.obj : error LNK2019: unresolved external symbol __imp__Func referenced in function _main
+D:\Robota\Innsbruck\git\IsotopeFitLib\libcaller2\Debug\libcaller2.exe : fatal error LNK1120: 1 unresolved externals

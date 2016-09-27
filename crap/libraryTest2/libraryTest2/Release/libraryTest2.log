@@ -1,0 +1,9 @@
+﻿  Source1.cpp
+     Creating library D:\Robota\Innsbruck\git\IsotopeFitLib\libraryTest2\Release\libraryTest2.lib and object D:\Robota\Innsbruck\git\IsotopeFitLib\libraryTest2\Release\libraryTest2.exp
+  Generating code
+  0 of 12 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    7 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  libraryTest2.vcxproj -> D:\Robota\Innsbruck\git\IsotopeFitLib\libraryTest2\Release\libraryTest2.dll
+  libraryTest2.vcxproj -> D:\Robota\Innsbruck\git\IsotopeFitLib\libraryTest2\Release\libraryTest2.pdb (Full PDB)
