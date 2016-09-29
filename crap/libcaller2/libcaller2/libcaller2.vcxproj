@@ -19,9 +19,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{CF43C90A-CC8E-465C-ADB6-E4A9531E21A8}</ProjectGuid>
+    <ProjectGuid>{B3BBF2D1-0FA6-4427-8C02-7C0D307CB9CE}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>libcaller2</RootNamespace>
+    <RootNamespace>LibCaller2</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -88,6 +88,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -142,21 +143,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="gunga.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="head1.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <Library Include="..\..\libraryTest2\Release\libraryTest2.lib" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\..\libraryTest2\Release\libraryTest2.dll" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\libraryTest2\libraryTest2\libraryTest2.vcxproj">
-      <Project>{78727a2d-eb47-4db8-9cc6-97b4080394f0}</Project>
-    </ProjectReference>
+    <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
