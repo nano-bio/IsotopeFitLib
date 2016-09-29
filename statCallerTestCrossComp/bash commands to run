@@ -1,0 +1,93 @@
+atlab@matlab-server:~/Desktop/statCallerTestCrossComp$ i686-w64-mingw32-g++ main.cpp -o crosscomp.exe
+/tmp/ccXW4aDN.o:main.cpp:(.text+0xc): undefined reference to `Pozdrav()'
+collect2: error: ld returned 1 exit status
+matlab@matlab-server:~/Desktop/statCallerTestCrossComp$ i686-w64-mingw32-g++ main.cpp -L./ -o crosscomp.exe
+/tmp/ccwoGKsy.o:main.cpp:(.text+0xc): undefined reference to `Pozdrav()'
+collect2: error: ld returned 1 exit status
+matlab@matlab-server:~/Desktop/statCallerTestCrossComp$ i686-w64-mingw32-g++ main.cpp -L / -l libstatlibtest.a -o crosscomp.exe
+/usr/bin/i686-w64-mingw32-ld: cannot find -llibstatlibtest.a
+collect2: error: ld returned 1 exit status
+matlab@matlab-server:~/Desktop/statCallerTestCrossComp$ i686-w64-mingw32-g++ main.cpp -L lib -l libstatlibtest.a -o crosscomp.exe
+/usr/bin/i686-w64-mingw32-ld: cannot find -llibstatlibtest.a
+collect2: error: ld returned 1 exit status
+matlab@matlab-server:~/Desktop/statCallerTestCrossComp$ i686-w64-mingw32-g++ main.cpp -L lib -l=libstatlibtest.a -o crosscomp.exe
+/usr/bin/i686-w64-mingw32-ld: cannot find -llibstatlibtest.a
+collect2: error: ld returned 1 exit status
+matlab@matlab-server:~/Desktop/statCallerTestCrossComp$ i686-w64-mingw32-g++ main.cpp -L lib libstatlibtest.a -o crosscomp.exe
+i686-w64-mingw32-g++: error: libstatlibtest.a: No such file or directory
+matlab@matlab-server:~/Desktop/statCallerTestCrossComp$ i686-w64-mingw32-g++ main.cpp -L lib -l libstatlibtest.a -o crosscomp.exe
+/usr/bin/i686-w64-mingw32-ld: cannot find -llibstatlibtest.a
+collect2: error: ld returned 1 exit status
+matlab@matlab-server:~/Desktop/statCallerTestCrossComp$ i686-w64-mingw32-g++ main.cpp -L ./lib -l libstatlibtest.a -o crosscomp.exe
+/usr/bin/i686-w64-mingw32-ld: cannot find -llibstatlibtest.a
+collect2: error: ld returned 1 exit status
+matlab@matlab-server:~/Desktop/statCallerTestCrossComp$ i686-w64-mingw32-g++ main.cpp -L ./lib/libstatlibtest.a -o crosscomp.exe
+/tmp/ccNf0e1B.o:main.cpp:(.text+0xc): undefined reference to `Pozdrav()'
+collect2: error: ld returned 1 exit status
+matlab@matlab-server:~/Desktop/statCallerTestCrossComp$ i686-w64-mingw32-g++ main.cpp -L ./lib -o crosscomp.exe
+/tmp/ccvZUaWV.o:main.cpp:(.text+0xc): undefined reference to `Pozdrav()'
+collect2: error: ld returned 1 exit status
+matlab@matlab-server:~/Desktop/statCallerTestCrossComp$ i686-w64-mingw32-g++ main.cpp -L./lib -o crosscomp.exe
+/tmp/ccvrqEeU.o:main.cpp:(.text+0xc): undefined reference to `Pozdrav()'
+collect2: error: ld returned 1 exit status
+matlab@matlab-server:~/Desktop/statCallerTestCrossComp$ i686-w64-mingw32-g++ main.cpp -L./lib -llibstattest.a -o crosscomp.exe
+/usr/bin/i686-w64-mingw32-ld: cannot find -llibstattest.a
+collect2: error: ld returned 1 exit status
+matlab@matlab-server:~/Desktop/statCallerTestCrossComp$ i686-w64-mingw32-g++ main.cpp -L./lib -llibstattestdd.a -o crosscomp.exe
+/usr/bin/i686-w64-mingw32-ld: cannot find -llibstattestdd.a
+collect2: error: ld returned 1 exit status
+matlab@matlab-server:~/Desktop/statCallerTestCrossComp$ i686-w64-mingw32-g++ main.cpp -L./lib -llibstattest.a -o crosscomp.exe
+/usr/bin/i686-w64-mingw32-ld: cannot find -llibstattest.a
+collect2: error: ld returned 1 exit status
+matlab@matlab-server:~/Desktop/statCallerTestCrossComp$ i686-w64-mingw32-g++ main.cpp -L. -o crosscomp.exe
+/tmp/ccHq8WNo.o:main.cpp:(.text+0xc): undefined reference to `Pozdrav()'
+collect2: error: ld returned 1 exit status
+matlab@matlab-server:~/Desktop/statCallerTestCrossComp$ i686-w64-mingw32-g++ main.cpp -L. -llibstatlibtest -o crosscomp.exe
+/usr/bin/i686-w64-mingw32-ld: cannot find -llibstatlibtest
+collect2: error: ld returned 1 exit status
+matlab@matlab-server:~/Desktop/statCallerTestCrossComp$ i686-w64-mingw32-g++ main.cpp -L. -llibstatlibtest.a -o crosscomp.exe
+/usr/bin/i686-w64-mingw32-ld: cannot find -llibstatlibtest.a
+collect2: error: ld returned 1 exit status
+matlab@matlab-server:~/Desktop/statCallerTestCrossComp$ i686-w64-mingw32-g++ main.cpp -llibstatlibtest.a -L. -o crosscomp.exe
+/usr/bin/i686-w64-mingw32-ld: cannot find -llibstatlibtest.a
+collect2: error: ld returned 1 exit status
+matlab@matlab-server:~/Desktop/statCallerTestCrossComp$ i686-w64-mingw32-g++ -o hue.exe main.cpp -llibstatlibtest.a -L.
+/usr/bin/i686-w64-mingw32-ld: cannot find -llibstatlibtest.a
+collect2: error: ld returned 1 exit status
+matlab@matlab-server:~/Desktop/statCallerTestCrossComp$ g++ -o hue main.cpp -llibstatlibtest.a -L.
+/usr/bin/ld: cannot find -llibstatlibtest.a
+collect2: error: ld returned 1 exit status
+matlab@matlab-server:~/Desktop/statCallerTestCrossComp$ g++ -o hue main.cpp -libstatlibtest.a -L.
+/usr/bin/ld: cannot find -libstatlibtest.a
+collect2: error: ld returned 1 exit status
+matlab@matlab-server:~/Desktop/statCallerTestCrossComp$ g++ -o hue main.cpp -l libstatlibtest.a -L.
+/usr/bin/ld: cannot find -llibstatlibtest.a
+collect2: error: ld returned 1 exit status
+matlab@matlab-server:~/Desktop/statCallerTestCrossComp$ g++ -o hue main.cpp -l libstatlibtest.a -L/home/matlab/Desktop/statCallerTestCrossComp
+/usr/bin/ld: cannot find -llibstatlibtest.a
+collect2: error: ld returned 1 exit status
+matlab@matlab-server:~/Desktop/statCallerTestCrossComp$ g++ -L/home/matlab/Desktop/statCallerTestCrossComp -llibstatlibtest.a main.cpp -o hue
+/usr/bin/ld: cannot find -llibstatlibtest.a
+collect2: error: ld returned 1 exit status
+matlab@matlab-server:~/Desktop/statCallerTestCrossComp$ ld -llibstatlibtest.a
+ld: cannot find -llibstatlibtest.a
+matlab@matlab-server:~/Desktop/statCallerTestCrossComp$ ld -L. -llibstatlibtest.a
+ld: cannot find -llibstatlibtest.a
+matlab@matlab-server:~/Desktop/statCallerTestCrossComp$ g++ -c statsrc.cpp -o statsrc.o
+matlab@matlab-server:~/Desktop/statCallerTestCrossComp$ g++ -c main.cpp -o main.o
+matlab@matlab-server:~/Desktop/statCallerTestCrossComp$ ar cr libstatlibtest.a main.o
+matlab@matlab-server:~/Desktop/statCallerTestCrossComp$ g++ main.cpp -L. -lmain.o
+/usr/bin/ld: cannot find -lmain.o
+collect2: error: ld returned 1 exit status
+matlab@matlab-server:~/Desktop/statCallerTestCrossComp$ g++ main.cpp -L. -lmain
+/usr/bin/ld: cannot find -lmain
+collect2: error: ld returned 1 exit status
+matlab@matlab-server:~/Desktop/statCallerTestCrossComp$ g++ main.cpp -L. -lstatsrc.o
+/usr/bin/ld: cannot find -lstatsrc.o
+collect2: error: ld returned 1 exit status
+matlab@matlab-server:~/Desktop/statCallerTestCrossComp$ g++ main.cpp -L. statsrc.o
+matlab@matlab-server:~/Desktop/statCallerTestCrossComp$ g++ main.cpp -L. statsrc.o -o hue
+matlab@matlab-server:~/Desktop/statCallerTestCrossComp$ ./hue 
+nazdar
+matlab@matlab-server:~/Desktop/statCallerTestCrossComp$ 
+

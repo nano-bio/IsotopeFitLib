@@ -1,0 +1,32 @@
+p -L. -lstatsrc
+/usr/bin/i686-w64-mingw32-ld: cannot find -lstatsrc
+collect2: error: ld returned 1 exit status
+matlab@matlab-server:~/Desktop/statCallerTestCrossComp2$ i686-w64-mingw32-g++ -o main.exe main.cpp -L. -llibstatsrc
+/usr/bin/i686-w64-mingw32-ld: cannot find -llibstatsrc
+collect2: error: ld returned 1 exit status
+matlab@matlab-server:~/Desktop/statCallerTestCrossComp2$ i686-w64-mingw32-g++ -o main.exe main.cpp -L. -lstatsrc
+/usr/bin/i686-w64-mingw32-ld: cannot find -lstatsrc
+collect2: error: ld returned 1 exit status
+matlab@matlab-server:~/Desktop/statCallerTestCrossComp2$ i686-w64-mingw32-g++ -o main.exe main.cpp -L. -lstatsrc
+/usr/bin/i686-w64-mingw32-ld: cannot find -lstatsrc
+collect2: error: ld returned 1 exit status
+matlab@matlab-server:~/Desktop/statCallerTestCrossComp2$ i686-w64-mingw32-g++ -o main.exe main.cpp -L. -lstatsrc -static
+/usr/bin/i686-w64-mingw32-ld: cannot find -lstatsrc
+collect2: error: ld returned 1 exit status
+matlab@matlab-server:~/Desktop/statCallerTestCrossComp2$ i686-w64-mingw32-g++ -o main.exe main.cpp -L. -lstatsrc -static -mconsole
+/usr/bin/i686-w64-mingw32-ld: cannot find -lstatsrc
+collect2: error: ld returned 1 exit status
+matlab@matlab-server:~/Desktop/statCallerTestCrossComp2$ clear
+
+matlab@matlab-server:~/Desktop/statCallerTestCrossComp2$ i686-w64-mingw32-g++ -c statsrc.cpp -i statsrc.o
+i686-w64-mingw32-g++: error: statsrc.o: No such file or directory
+i686-w64-mingw32-g++: error: unrecognized command line option ‘-i’
+matlab@matlab-server:~/Desktop/statCallerTestCrossComp2$ i686-w64-mingw32-g++ -c statsrc.cpp -o statsrc.o
+matlab@matlab-server:~/Desktop/statCallerTestCrossComp2$ ar rcs libstatlibtest.a statsrc.o
+matlab@matlab-server:~/Desktop/statCallerTestCrossComp2$ i686-w64-mingw32-g++ -c main.cpp -o main.o
+matlab@matlab-server:~/Desktop/statCallerTestCrossComp2$ i686-w64-mingw32-g++ -o main.exe main.o -L. -lstatsrc
+/usr/bin/i686-w64-mingw32-ld: cannot find -lstatsrc
+collect2: error: ld returned 1 exit status
+matlab@matlab-server:~/Desktop/statCallerTestCrossComp2$ i686-w64-mingw32-g++ -o main.exe main.o -L. -lstatlibtest
+matlab@matlab-server:~/Desktop/statCallerTestCrossComp2$ 
+
