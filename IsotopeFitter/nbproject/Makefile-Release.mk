@@ -35,7 +35,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/IsotopeFitter.o
+	${OBJECTDIR}/src/IsotopeFitter.o
 
 # Test Directory
 TESTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}/tests
@@ -43,10 +43,12 @@ TESTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}/tests
 # Test Files
 TESTFILES= \
 	${TESTDIR}/TestFiles/f1 \
-	${TESTDIR}/TestFiles/f2
+	${TESTDIR}/TestFiles/f2 \
+	${TESTDIR}/TestFiles/f3
 
 # Test Object Files
 TESTOBJECTFILES= \
+	${TESTDIR}/tests/MatBin.o \
 	${TESTDIR}/tests/h5openread.o \
 	${TESTDIR}/tests/h5readatt.o
 
@@ -74,10 +76,10 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/isotopefitter: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/isotopefitter ${OBJECTFILES} ${LDLIBSOPTIONS}
 
-${OBJECTDIR}/IsotopeFitter.o: IsotopeFitter.cpp 
-	${MKDIR} -p ${OBJECTDIR}
+${OBJECTDIR}/src/IsotopeFitter.o: src/IsotopeFitter.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/IsotopeFitter.o IsotopeFitter.cpp
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/IsotopeFitter.o src/IsotopeFitter.cpp
 
 # Subprojects
 .build-subprojects:
@@ -94,6 +96,10 @@ ${TESTDIR}/TestFiles/f2: ${TESTDIR}/tests/h5readatt.o ${OBJECTFILES:%.o=%_nomain
 	${MKDIR} -p ${TESTDIR}/TestFiles
 	${LINK.cc}   -o ${TESTDIR}/TestFiles/f2 $^ ${LDLIBSOPTIONS} 
 
+${TESTDIR}/TestFiles/f3: ${TESTDIR}/tests/MatBin.o ${OBJECTFILES:%.o=%_nomain.o}
+	${MKDIR} -p ${TESTDIR}/TestFiles
+	${LINK.cc}   -o ${TESTDIR}/TestFiles/f3 $^ ${LDLIBSOPTIONS} 
+
 
 ${TESTDIR}/tests/h5openread.o: tests/h5openread.cpp 
 	${MKDIR} -p ${TESTDIR}/tests
@@ -107,17 +113,23 @@ ${TESTDIR}/tests/h5readatt.o: tests/h5readatt.cpp
 	$(COMPILE.cc) -O2 -I. -MMD -MP -MF "$@.d" -o ${TESTDIR}/tests/h5readatt.o tests/h5readatt.cpp
 
 
-${OBJECTDIR}/IsotopeFitter_nomain.o: ${OBJECTDIR}/IsotopeFitter.o IsotopeFitter.cpp 
-	${MKDIR} -p ${OBJECTDIR}
-	@NMOUTPUT=`${NM} ${OBJECTDIR}/IsotopeFitter.o`; \
+${TESTDIR}/tests/MatBin.o: tests/MatBin.cpp 
+	${MKDIR} -p ${TESTDIR}/tests
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -I. -MMD -MP -MF "$@.d" -o ${TESTDIR}/tests/MatBin.o tests/MatBin.cpp
+
+
+${OBJECTDIR}/src/IsotopeFitter_nomain.o: ${OBJECTDIR}/src/IsotopeFitter.o src/IsotopeFitter.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/src/IsotopeFitter.o`; \
 	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
 	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
 	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
 	then  \
 	    ${RM} "$@.d";\
-	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/IsotopeFitter_nomain.o IsotopeFitter.cpp;\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/IsotopeFitter_nomain.o src/IsotopeFitter.cpp;\
 	else  \
-	    ${CP} ${OBJECTDIR}/IsotopeFitter.o ${OBJECTDIR}/IsotopeFitter_nomain.o;\
+	    ${CP} ${OBJECTDIR}/src/IsotopeFitter.o ${OBJECTDIR}/src/IsotopeFitter_nomain.o;\
 	fi
 
 # Run Test Targets
@@ -126,6 +138,7 @@ ${OBJECTDIR}/IsotopeFitter_nomain.o: ${OBJECTDIR}/IsotopeFitter.o IsotopeFitter.
 	then  \
 	    ${TESTDIR}/TestFiles/f1 || true; \
 	    ${TESTDIR}/TestFiles/f2 || true; \
+	    ${TESTDIR}/TestFiles/f3 || true; \
 	else  \
 	    ./${TEST} || true; \
 	fi

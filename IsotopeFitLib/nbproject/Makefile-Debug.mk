@@ -35,7 +35,8 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/HDF5Func.o
+	${OBJECTDIR}/src/HDF5Func.o \
+	${OBJECTDIR}/src/MatBinFunc.o
 
 
 # C Compiler Flags
@@ -64,10 +65,15 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libisotopefitlib.a: ${OBJECTFILES}
 	${AR} -rv ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libisotopefitlib.a ${OBJECTFILES} 
 	$(RANLIB) ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libisotopefitlib.a
 
-${OBJECTDIR}/HDF5Func.o: HDF5Func.cpp 
-	${MKDIR} -p ${OBJECTDIR}
+${OBJECTDIR}/src/HDF5Func.o: src/HDF5Func.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/HDF5Func.o HDF5Func.cpp
+	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/HDF5Func.o src/HDF5Func.cpp
+
+${OBJECTDIR}/src/MatBinFunc.o: src/MatBinFunc.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/MatBinFunc.o src/MatBinFunc.cpp
 
 # Subprojects
 .build-subprojects:

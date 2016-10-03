@@ -7,10 +7,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group name="dev">
-            <file>file:/home/matlab/Michal/dev/IsotopeFitter/tests/h5openread.cpp</file>
-            <file>file:/home/matlab/Michal/dev/IsotopeFitter/IsotopeFitter.h</file>
-            <file>file:/home/matlab/Michal/dev/IsotopeFitter/tests/h5readatt.cpp</file>
-            <file>file:/home/matlab/Michal/dev/IsotopeFitter/IsotopeFitter.cpp</file>
+            <file>file:/home/matlab/Michal/dev/IsotopeFitter/src/IsotopeFitter.cpp</file>
+            <file>file:/home/matlab/Michal/dev/IsotopeFitter/src/IsotopeFitter.h</file>
+            <file>file:/home/matlab/Michal/dev/IsotopeFitter/tests/MatBin.cpp</file>
         </group>
     </open-files>
 </project-private>

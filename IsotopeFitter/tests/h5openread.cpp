@@ -1,12 +1,12 @@
 #include <stdlib.h>
 #include <iostream>
 
-#include "IsotopeFitter.h"
+#include "src/IsotopeFitter.h"
 
 void test1() {
     std::cout << "h5test test 1" << std::endl;
     
-    string str("testfile.h5");
+    string str("tests/testfile.h5");
     
     cout << str << "\n";
     
@@ -46,7 +46,7 @@ void test2() {
     std::cout << "h5test test 2" << std::endl;
     //std::cout << "%TEST_FAILED% time=0 testname=test2 (newsimpletest) message=error message sample" << std::endl;
     
-    H5File fi = OpenH5File("testfile.h5");
+    H5File fi = OpenH5File("tests/testfile.h5");
     DataSet dase = OpenH5DataSet(fi, "/FullSpectra/MassAxis");
     
     float da[99750];
