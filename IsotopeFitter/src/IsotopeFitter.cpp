@@ -1,40 +1,35 @@
 #include "IsotopeFitter.h"
-#include <stdint.h>
+//#include <matio.h>
+//#include <stdint.h>
 
-string inputFile("../testfile.h5");
+
+//string inputFile("../testfile.h5");
 
 int main(int argc, char** argv)
 {    
+//    vector<double> *frgd = new vector<double>();
+//    //vector<double> gg = *frgd;
+//    
+//    frgd->push_back(4);
+//    
+//    cout << frgd->at(0) << endl;
+//    
+//    delete frgd;
+    
+    //cout << argv[1] << endl;
 
+    //for (int i=0; i<10; i++)
+    //{
+        //cout << "pass " << i << endl;
+        //getchar();
+        string str = "/home/matlab/Michal/dev/IsotopeFitter/tests/testfileifd.ifd";
+        LoadIFDFile(str);
+        //cout << "pass " << i << " done" << endl;
+        //getchar();
+        
+        cout << IFData::endInd << endl;
+        cout << "done" << endl;
+    //}
+    
     return 0;
 }
-
-//TODO: tidy up
-/* Utility functions, will be moved */
-/* Joins two bytes/chars, big-endian */
-//inline uint16_t PackBytesToUint16BE(unsigned char *Array, int startIndex)
-//{
-//    uint16_t retval = (Array[startIndex] << 8 | Array[startIndex + 1]);
-//    return retval;
-//}
-//
-///* Joins four bytes/chars, big-endian */
-//inline uint32_t PackBytesToUint32BE(unsigned char *Array, int startIndex)
-//{
-//    uint32_t retval = (Array[startIndex] << 24 | Array[startIndex + 1] << 16 | Array[startIndex + 2] << 8 | Array[startIndex + 3]);
-//    return retval;
-//}
-//
-///* Joins two bytes/chars, little-endian */
-//inline uint16_t PackBytesToUint16LE(unsigned char *Array, int startIndex)
-//{
-//    uint16_t retval = (Array[startIndex + 1] << 8 | Array[startIndex]);
-//    return retval;
-//}
-//
-///* Joins four bytes/chars, little-endian */
-//inline uint32_t PackBytesToUint32LE(unsigned char *Array, int startIndex)
-//{
-//    uint32_t retval = (Array[startIndex + 3] << 24 | Array[startIndex + 2] << 16 | Array[startIndex + 1] << 8 | Array[startIndex]);
-//    return retval;
-//}

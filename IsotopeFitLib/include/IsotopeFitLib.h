@@ -3,8 +3,9 @@
 #ifndef ISOTOPEFITLIB_H
 #define ISOTOPEFITLIB_H
 
-#include "HDF5Func.h"
-#include "MatBinFunc.h"
+//#include "HDF5Func.h"
+//#include "MatBinFunc.h"
+#include "ifdfile.h"
 
 #endif /* ISOTOPEFITLIB_H */
 

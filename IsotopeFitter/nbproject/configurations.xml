@@ -19,20 +19,11 @@
                    displayName="Test Files"
                    projectFiles="false"
                    kind="TEST_LOGICAL_FOLDER">
-      <logicalFolder name="f1"
-                     displayName="H5OpenRead"
+      <logicalFolder name="f4"
+                     displayName="matiotest"
                      projectFiles="true"
                      kind="TEST">
-        <itemPath>tests/h5openread.cpp</itemPath>
-      </logicalFolder>
-      <logicalFolder name="f2"
-                     displayName="H5ReadAtt"
-                     projectFiles="true"
-                     kind="TEST">
-        <itemPath>tests/h5readatt.cpp</itemPath>
-      </logicalFolder>
-      <logicalFolder name="f3" displayName="MatBin" projectFiles="true" kind="TEST">
-        <itemPath>tests/MatBin.cpp</itemPath>
+        <itemPath>tests/matiotest.cpp</itemPath>
       </logicalFolder>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
@@ -51,12 +42,17 @@
         <rebuildPropChanged>false</rebuildPropChanged>
       </toolsSet>
       <compileType>
+        <cTool>
+          <standard>10</standard>
+        </cTool>
         <ccTool>
-          <standard>8</standard>
+          <standard>11</standard>
           <incDir>
             <pElem>/usr/local/include</pElem>
             <pElem>/home/matlab/Michal/glibcinstall/include</pElem>
           </incDir>
+          <commandLine>-g -O0</commandLine>
+          <warningLevel>2</warningLevel>
         </ccTool>
         <linkerTool>
           <linkerAddLib>
@@ -67,15 +63,18 @@
             <linkerLibFileItem>../IsotopeFitLib/dist/Debug/GNU-Linux/libisotopefitlib.a</linkerLibFileItem>
             <linkerLibFileItem>/usr/local/lib/libhdf5_cpp.a</linkerLibFileItem>
             <linkerLibFileItem>/usr/local/lib/libhdf5.a</linkerLibFileItem>
+            <linkerLibFileItem>/usr/local/lib/libmatio.a</linkerLibFileItem>
             <linkerLibFileItem>/usr/local/lib/libsz.a</linkerLibFileItem>
             <linkerLibFileItem>/usr/local/lib/libz.a</linkerLibFileItem>
             <linkerLibFileItem>/home/matlab/Michal/glibcinstall/lib/libdl.a</linkerLibFileItem>
             <linkerLibFileItem>/home/matlab/Michal/glibcinstall/lib/libc.a</linkerLibFileItem>
+            <linkerLibFileItem>/usr/local/lib/libgsl.a</linkerLibFileItem>
+            <linkerLibFileItem>/usr/local/lib/libgslcblas.a</linkerLibFileItem>
           </linkerLibItems>
           <commandLine>-static</commandLine>
         </linkerTool>
       </compileType>
-      <folder path="TestFiles/f1">
+      <folder path="TestFiles/f4">
         <cTool>
           <incDir>
             <pElem>.</pElem>
@@ -85,41 +84,10 @@
           <incDir>
             <pElem>.</pElem>
           </incDir>
+          <commandLine>-O0</commandLine>
         </ccTool>
         <linkerTool>
-          <output>${TESTDIR}/TestFiles/f1</output>
-          <commandLine>-static</commandLine>
-        </linkerTool>
-      </folder>
-      <folder path="TestFiles/f2">
-        <cTool>
-          <incDir>
-            <pElem>.</pElem>
-          </incDir>
-        </cTool>
-        <ccTool>
-          <incDir>
-            <pElem>.</pElem>
-          </incDir>
-        </ccTool>
-        <linkerTool>
-          <output>${TESTDIR}/TestFiles/f2</output>
-          <commandLine>-static</commandLine>
-        </linkerTool>
-      </folder>
-      <folder path="TestFiles/f3">
-        <cTool>
-          <incDir>
-            <pElem>.</pElem>
-          </incDir>
-        </cTool>
-        <ccTool>
-          <incDir>
-            <pElem>.</pElem>
-          </incDir>
-        </ccTool>
-        <linkerTool>
-          <output>${TESTDIR}/TestFiles/f3</output>
+          <output>${TESTDIR}/TestFiles/f4</output>
           <commandLine>-static</commandLine>
         </linkerTool>
       </folder>
@@ -127,11 +95,7 @@
       </item>
       <item path="src/IsotopeFitter.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="tests/MatBin.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="tests/h5openread.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="tests/h5readatt.cpp" ex="false" tool="1" flavor2="0">
+      <item path="tests/matiotest.cpp" ex="false" tool="1" flavor2="0">
       </item>
     </conf>
     <conf name="Release" type="1">
@@ -143,9 +107,16 @@
       <compileType>
         <cTool>
           <developmentMode>5</developmentMode>
+          <standard>10</standard>
         </cTool>
         <ccTool>
           <developmentMode>5</developmentMode>
+          <standard>11</standard>
+          <incDir>
+            <pElem>/usr/local/include</pElem>
+          </incDir>
+          <commandLine>-g -O0</commandLine>
+          <warningLevel>2</warningLevel>
         </ccTool>
         <fortranCompilerTool>
           <developmentMode>5</developmentMode>
@@ -153,8 +124,26 @@
         <asmTool>
           <developmentMode>5</developmentMode>
         </asmTool>
+        <linkerTool>
+          <linkerAddLib>
+            <pElem>/usr/local/lib</pElem>
+          </linkerAddLib>
+          <linkerLibItems>
+            <linkerLibFileItem>../IsotopeFitLib/dist/Release/GNU-Linux/libisotopefitlib.a</linkerLibFileItem>
+            <linkerLibFileItem>/usr/local/lib/libhdf5_cpp.a</linkerLibFileItem>
+            <linkerLibFileItem>/usr/local/lib/libhdf5.a</linkerLibFileItem>
+            <linkerLibFileItem>/usr/local/lib/libmatio.a</linkerLibFileItem>
+            <linkerLibFileItem>/usr/local/lib/libsz.a</linkerLibFileItem>
+            <linkerLibFileItem>/usr/local/lib/libz.a</linkerLibFileItem>
+            <linkerLibFileItem>../../glibcinstall/lib/libdl.a</linkerLibFileItem>
+            <linkerLibFileItem>../../glibcinstall/lib/libc.a</linkerLibFileItem>
+            <linkerLibFileItem>/usr/local/lib/libgsl.a</linkerLibFileItem>
+            <linkerLibFileItem>/usr/local/lib/libgslcblas.a</linkerLibFileItem>
+          </linkerLibItems>
+          <commandLine>-static</commandLine>
+        </linkerTool>
       </compileType>
-      <folder path="TestFiles/f1">
+      <folder path="TestFiles/f4">
         <cTool>
           <incDir>
             <pElem>.</pElem>
@@ -166,48 +155,14 @@
           </incDir>
         </ccTool>
         <linkerTool>
-          <output>${TESTDIR}/TestFiles/f1</output>
-        </linkerTool>
-      </folder>
-      <folder path="TestFiles/f2">
-        <cTool>
-          <incDir>
-            <pElem>.</pElem>
-          </incDir>
-        </cTool>
-        <ccTool>
-          <incDir>
-            <pElem>.</pElem>
-          </incDir>
-        </ccTool>
-        <linkerTool>
-          <output>${TESTDIR}/TestFiles/f2</output>
-        </linkerTool>
-      </folder>
-      <folder path="TestFiles/f3">
-        <cTool>
-          <incDir>
-            <pElem>.</pElem>
-          </incDir>
-        </cTool>
-        <ccTool>
-          <incDir>
-            <pElem>.</pElem>
-          </incDir>
-        </ccTool>
-        <linkerTool>
-          <output>${TESTDIR}/TestFiles/f3</output>
+          <output>${TESTDIR}/TestFiles/f4</output>
         </linkerTool>
       </folder>
       <item path="src/IsotopeFitter.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/IsotopeFitter.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="tests/MatBin.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="tests/h5openread.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="tests/h5readatt.cpp" ex="false" tool="1" flavor2="0">
+      <item path="tests/matiotest.cpp" ex="false" tool="1" flavor2="0">
       </item>
     </conf>
   </confs>

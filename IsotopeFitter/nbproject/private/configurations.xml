@@ -57,6 +57,9 @@
       </nativedebugger>
       <runprofile version="9">
         <runcommandpicklist>
+          <runcommandpicklistitem>"${OUTPUT_PATH}" -nazdar</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}nazdar"</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}" -b</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}"</runcommandpicklistitem>
         </runcommandpicklist>
         <runcommand>"${OUTPUT_PATH}"</runcommand>

@@ -42,22 +42,18 @@ TESTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}/tests
 
 # Test Files
 TESTFILES= \
-	${TESTDIR}/TestFiles/f1 \
-	${TESTDIR}/TestFiles/f2 \
-	${TESTDIR}/TestFiles/f3
+	${TESTDIR}/TestFiles/f4
 
 # Test Object Files
 TESTOBJECTFILES= \
-	${TESTDIR}/tests/MatBin.o \
-	${TESTDIR}/tests/h5openread.o \
-	${TESTDIR}/tests/h5readatt.o
+	${TESTDIR}/tests/matiotest.o
 
 # C Compiler Flags
 CFLAGS=
 
 # CC Compiler Flags
-CCFLAGS=
-CXXFLAGS=
+CCFLAGS=-g -O0
+CXXFLAGS=-g -O0
 
 # Fortran Compiler Flags
 FFLAGS=
@@ -66,20 +62,40 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=
+LDLIBSOPTIONS=-L/usr/local/lib ../IsotopeFitLib/dist/Release/GNU-Linux/libisotopefitlib.a /usr/local/lib/libhdf5_cpp.a /usr/local/lib/libhdf5.a /usr/local/lib/libmatio.a /usr/local/lib/libsz.a /usr/local/lib/libz.a ../../glibcinstall/lib/libdl.a ../../glibcinstall/lib/libc.a /usr/local/lib/libgsl.a /usr/local/lib/libgslcblas.a
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
 	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/isotopefitter
 
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/isotopefitter: ../IsotopeFitLib/dist/Release/GNU-Linux/libisotopefitlib.a
+
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/isotopefitter: /usr/local/lib/libhdf5_cpp.a
+
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/isotopefitter: /usr/local/lib/libhdf5.a
+
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/isotopefitter: /usr/local/lib/libmatio.a
+
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/isotopefitter: /usr/local/lib/libsz.a
+
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/isotopefitter: /usr/local/lib/libz.a
+
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/isotopefitter: ../../glibcinstall/lib/libdl.a
+
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/isotopefitter: ../../glibcinstall/lib/libc.a
+
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/isotopefitter: /usr/local/lib/libgsl.a
+
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/isotopefitter: /usr/local/lib/libgslcblas.a
+
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/isotopefitter: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
-	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/isotopefitter ${OBJECTFILES} ${LDLIBSOPTIONS}
+	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/isotopefitter ${OBJECTFILES} ${LDLIBSOPTIONS} -static
 
 ${OBJECTDIR}/src/IsotopeFitter.o: src/IsotopeFitter.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/IsotopeFitter.o src/IsotopeFitter.cpp
+	$(COMPILE.cc) -O2 -Wall -I/usr/local/include -std=c++14 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/IsotopeFitter.o src/IsotopeFitter.cpp
 
 # Subprojects
 .build-subprojects:
@@ -88,35 +104,15 @@ ${OBJECTDIR}/src/IsotopeFitter.o: src/IsotopeFitter.cpp
 .build-tests-conf: .build-tests-subprojects .build-conf ${TESTFILES}
 .build-tests-subprojects:
 
-${TESTDIR}/TestFiles/f1: ${TESTDIR}/tests/h5openread.o ${OBJECTFILES:%.o=%_nomain.o}
+${TESTDIR}/TestFiles/f4: ${TESTDIR}/tests/matiotest.o ${OBJECTFILES:%.o=%_nomain.o}
 	${MKDIR} -p ${TESTDIR}/TestFiles
-	${LINK.cc}   -o ${TESTDIR}/TestFiles/f1 $^ ${LDLIBSOPTIONS} 
-
-${TESTDIR}/TestFiles/f2: ${TESTDIR}/tests/h5readatt.o ${OBJECTFILES:%.o=%_nomain.o}
-	${MKDIR} -p ${TESTDIR}/TestFiles
-	${LINK.cc}   -o ${TESTDIR}/TestFiles/f2 $^ ${LDLIBSOPTIONS} 
-
-${TESTDIR}/TestFiles/f3: ${TESTDIR}/tests/MatBin.o ${OBJECTFILES:%.o=%_nomain.o}
-	${MKDIR} -p ${TESTDIR}/TestFiles
-	${LINK.cc}   -o ${TESTDIR}/TestFiles/f3 $^ ${LDLIBSOPTIONS} 
+	${LINK.cc}   -o ${TESTDIR}/TestFiles/f4 $^ ${LDLIBSOPTIONS} 
 
 
-${TESTDIR}/tests/h5openread.o: tests/h5openread.cpp 
+${TESTDIR}/tests/matiotest.o: tests/matiotest.cpp 
 	${MKDIR} -p ${TESTDIR}/tests
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -I. -MMD -MP -MF "$@.d" -o ${TESTDIR}/tests/h5openread.o tests/h5openread.cpp
-
-
-${TESTDIR}/tests/h5readatt.o: tests/h5readatt.cpp 
-	${MKDIR} -p ${TESTDIR}/tests
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -I. -MMD -MP -MF "$@.d" -o ${TESTDIR}/tests/h5readatt.o tests/h5readatt.cpp
-
-
-${TESTDIR}/tests/MatBin.o: tests/MatBin.cpp 
-	${MKDIR} -p ${TESTDIR}/tests
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -I. -MMD -MP -MF "$@.d" -o ${TESTDIR}/tests/MatBin.o tests/MatBin.cpp
+	$(COMPILE.cc) -O2 -Wall -I/usr/local/include -I. -std=c++14 -MMD -MP -MF "$@.d" -o ${TESTDIR}/tests/matiotest.o tests/matiotest.cpp
 
 
 ${OBJECTDIR}/src/IsotopeFitter_nomain.o: ${OBJECTDIR}/src/IsotopeFitter.o src/IsotopeFitter.cpp 
@@ -127,7 +123,7 @@ ${OBJECTDIR}/src/IsotopeFitter_nomain.o: ${OBJECTDIR}/src/IsotopeFitter.o src/Is
 	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
 	then  \
 	    ${RM} "$@.d";\
-	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/IsotopeFitter_nomain.o src/IsotopeFitter.cpp;\
+	    $(COMPILE.cc) -O2 -Wall -I/usr/local/include -std=c++14 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/IsotopeFitter_nomain.o src/IsotopeFitter.cpp;\
 	else  \
 	    ${CP} ${OBJECTDIR}/src/IsotopeFitter.o ${OBJECTDIR}/src/IsotopeFitter_nomain.o;\
 	fi
@@ -136,9 +132,7 @@ ${OBJECTDIR}/src/IsotopeFitter_nomain.o: ${OBJECTDIR}/src/IsotopeFitter.o src/Is
 .test-conf:
 	@if [ "${TEST}" = "" ]; \
 	then  \
-	    ${TESTDIR}/TestFiles/f1 || true; \
-	    ${TESTDIR}/TestFiles/f2 || true; \
-	    ${TESTDIR}/TestFiles/f3 || true; \
+	    ${TESTDIR}/TestFiles/f4 || true; \
 	else  \
 	    ./${TEST} || true; \
 	fi
