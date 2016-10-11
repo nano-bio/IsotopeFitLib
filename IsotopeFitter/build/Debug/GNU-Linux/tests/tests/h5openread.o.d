@@ -27,7 +27,8 @@ build/Debug/GNU-Linux/tests/tests/h5openread.o: tests/h5openread.cpp \
  /home/matlab/Michal/glibcinstall/include/bits/stdlib-float.h \
  src/IsotopeFitter.h src/../../IsotopeFitLib/include/IsotopeFitLib.h \
  src/../../IsotopeFitLib/include/HDF5Func.h \
- src/../../IsotopeFitLib/include/MatBinFunc.h
+ src/../../IsotopeFitLib/include/ifdfile.h \
+ src/../../IsotopeFitLib/include/fitting.h
 
 /home/matlab/Michal/glibcinstall/include/stdc-predef.h:
 
@@ -87,4 +88,6 @@ src/../../IsotopeFitLib/include/IsotopeFitLib.h:
 
 src/../../IsotopeFitLib/include/HDF5Func.h:
 
-src/../../IsotopeFitLib/include/MatBinFunc.h:
+src/../../IsotopeFitLib/include/ifdfile.h:
+
+src/../../IsotopeFitLib/include/fitting.h:

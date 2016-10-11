@@ -4,6 +4,7 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
+      <itemPath>include/HDF5Func.h</itemPath>
       <itemPath>include/IsotopeFitLib.h</itemPath>
       <itemPath>include/fitting.h</itemPath>
       <itemPath>include/ifdfile.h</itemPath>
@@ -15,6 +16,7 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
+      <itemPath>src/HDF5Func.cpp</itemPath>
       <itemPath>src/fitting.cpp</itemPath>
       <itemPath>src/ifdfile.cpp</itemPath>
     </logicalFolder>
@@ -48,11 +50,15 @@
         <archiverTool>
         </archiverTool>
       </compileType>
+      <item path="include/HDF5Func.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="include/IsotopeFitLib.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/fitting.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/ifdfile.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/HDF5Func.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/fitting.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -83,11 +89,15 @@
         <archiverTool>
         </archiverTool>
       </compileType>
+      <item path="include/HDF5Func.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="include/IsotopeFitLib.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/fitting.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/ifdfile.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/HDF5Func.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/fitting.cpp" ex="false" tool="1" flavor2="0">
       </item>

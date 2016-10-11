@@ -42,10 +42,16 @@ TESTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}/tests
 
 # Test Files
 TESTFILES= \
+	${TESTDIR}/TestFiles/f3 \
+	${TESTDIR}/TestFiles/f1 \
+	${TESTDIR}/TestFiles/f2 \
 	${TESTDIR}/TestFiles/f4
 
 # Test Object Files
 TESTOBJECTFILES= \
+	${TESTDIR}/tests/fittingtest.o \
+	${TESTDIR}/tests/gsltest.o \
+	${TESTDIR}/tests/h5openread.o \
 	${TESTDIR}/tests/matiotest.o
 
 # C Compiler Flags
@@ -104,9 +110,39 @@ ${OBJECTDIR}/src/IsotopeFitter.o: src/IsotopeFitter.cpp
 .build-tests-conf: .build-tests-subprojects .build-conf ${TESTFILES}
 .build-tests-subprojects:
 
+${TESTDIR}/TestFiles/f3: ${TESTDIR}/tests/fittingtest.o ${OBJECTFILES:%.o=%_nomain.o}
+	${MKDIR} -p ${TESTDIR}/TestFiles
+	${LINK.cc}   -o ${TESTDIR}/TestFiles/f3 $^ ${LDLIBSOPTIONS} 
+
+${TESTDIR}/TestFiles/f1: ${TESTDIR}/tests/gsltest.o ${OBJECTFILES:%.o=%_nomain.o}
+	${MKDIR} -p ${TESTDIR}/TestFiles
+	${LINK.cc}  -static -o ${TESTDIR}/TestFiles/f1 $^ ${LDLIBSOPTIONS} 
+
+${TESTDIR}/TestFiles/f2: ${TESTDIR}/tests/h5openread.o ${OBJECTFILES:%.o=%_nomain.o}
+	${MKDIR} -p ${TESTDIR}/TestFiles
+	${LINK.cc}   -o ${TESTDIR}/TestFiles/f2 $^ ${LDLIBSOPTIONS} 
+
 ${TESTDIR}/TestFiles/f4: ${TESTDIR}/tests/matiotest.o ${OBJECTFILES:%.o=%_nomain.o}
 	${MKDIR} -p ${TESTDIR}/TestFiles
 	${LINK.cc}   -o ${TESTDIR}/TestFiles/f4 $^ ${LDLIBSOPTIONS} 
+
+
+${TESTDIR}/tests/fittingtest.o: tests/fittingtest.cpp 
+	${MKDIR} -p ${TESTDIR}/tests
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -Wall -I/usr/local/include -I. -std=c++14 -MMD -MP -MF "$@.d" -o ${TESTDIR}/tests/fittingtest.o tests/fittingtest.cpp
+
+
+${TESTDIR}/tests/gsltest.o: tests/gsltest.cpp 
+	${MKDIR} -p ${TESTDIR}/tests
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -Wall -I/usr/local/include -I. -std=c++14 -MMD -MP -MF "$@.d" -o ${TESTDIR}/tests/gsltest.o tests/gsltest.cpp
+
+
+${TESTDIR}/tests/h5openread.o: tests/h5openread.cpp 
+	${MKDIR} -p ${TESTDIR}/tests
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -Wall -I/usr/local/include -I. -std=c++14 -MMD -MP -MF "$@.d" -o ${TESTDIR}/tests/h5openread.o tests/h5openread.cpp
 
 
 ${TESTDIR}/tests/matiotest.o: tests/matiotest.cpp 
@@ -132,6 +168,9 @@ ${OBJECTDIR}/src/IsotopeFitter_nomain.o: ${OBJECTDIR}/src/IsotopeFitter.o src/Is
 .test-conf:
 	@if [ "${TEST}" = "" ]; \
 	then  \
+	    ${TESTDIR}/TestFiles/f3 || true; \
+	    ${TESTDIR}/TestFiles/f1 || true; \
+	    ${TESTDIR}/TestFiles/f2 || true; \
 	    ${TESTDIR}/TestFiles/f4 || true; \
 	else  \
 	    ./${TEST} || true; \

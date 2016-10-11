@@ -19,6 +19,18 @@
                    displayName="Test Files"
                    projectFiles="false"
                    kind="TEST_LOGICAL_FOLDER">
+      <logicalFolder name="f3"
+                     displayName="fittingtest"
+                     projectFiles="true"
+                     kind="TEST">
+        <itemPath>tests/fittingtest.cpp</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f1" displayName="gsltest" projectFiles="true" kind="TEST">
+        <itemPath>tests/gsltest.cpp</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f2" displayName="h5test" projectFiles="true" kind="TEST">
+        <itemPath>tests/h5openread.cpp</itemPath>
+      </logicalFolder>
       <logicalFolder name="f4"
                      displayName="matiotest"
                      projectFiles="true"
@@ -74,6 +86,54 @@
           <commandLine>-static</commandLine>
         </linkerTool>
       </compileType>
+      <folder path="TestFiles/f1">
+        <cTool>
+          <incDir>
+            <pElem>.</pElem>
+          </incDir>
+        </cTool>
+        <ccTool>
+          <incDir>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f1</output>
+          <commandLine>-static</commandLine>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f2">
+        <cTool>
+          <incDir>
+            <pElem>.</pElem>
+          </incDir>
+        </cTool>
+        <ccTool>
+          <incDir>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f2</output>
+          <commandLine>-static</commandLine>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f3">
+        <cTool>
+          <incDir>
+            <pElem>.</pElem>
+          </incDir>
+        </cTool>
+        <ccTool>
+          <incDir>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f3</output>
+          <commandLine>-static</commandLine>
+        </linkerTool>
+      </folder>
       <folder path="TestFiles/f4">
         <cTool>
           <incDir>
@@ -94,6 +154,12 @@
       <item path="src/IsotopeFitter.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/IsotopeFitter.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tests/fittingtest.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/gsltest.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/h5openread.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="tests/matiotest.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -143,6 +209,52 @@
           <commandLine>-static</commandLine>
         </linkerTool>
       </compileType>
+      <folder path="TestFiles/f1">
+        <cTool>
+          <incDir>
+            <pElem>.</pElem>
+          </incDir>
+        </cTool>
+        <ccTool>
+          <incDir>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f1</output>
+          <commandLine>-static</commandLine>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f2">
+        <cTool>
+          <incDir>
+            <pElem>.</pElem>
+          </incDir>
+        </cTool>
+        <ccTool>
+          <incDir>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f2</output>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f3">
+        <cTool>
+          <incDir>
+            <pElem>.</pElem>
+          </incDir>
+        </cTool>
+        <ccTool>
+          <incDir>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f3</output>
+        </linkerTool>
+      </folder>
       <folder path="TestFiles/f4">
         <cTool>
           <incDir>
@@ -161,6 +273,12 @@
       <item path="src/IsotopeFitter.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/IsotopeFitter.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tests/fittingtest.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/gsltest.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/h5openread.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="tests/matiotest.cpp" ex="false" tool="1" flavor2="0">
       </item>

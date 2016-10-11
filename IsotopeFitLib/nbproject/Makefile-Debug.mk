@@ -35,6 +35,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/src/HDF5Func.o \
 	${OBJECTDIR}/src/fitting.o \
 	${OBJECTDIR}/src/ifdfile.o
 
@@ -64,6 +65,11 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libisotopefitlib.a: ${OBJECTFILES}
 	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libisotopefitlib.a
 	${AR} -rv ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libisotopefitlib.a ${OBJECTFILES} 
 	$(RANLIB) ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libisotopefitlib.a
+
+${OBJECTDIR}/src/HDF5Func.o: src/HDF5Func.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -std=c++14 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/HDF5Func.o src/HDF5Func.cpp
 
 ${OBJECTDIR}/src/fitting.o: src/fitting.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src

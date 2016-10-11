@@ -275,16 +275,16 @@ void test4() {
     cout << "RawData" << endl;
     for (int i=0; i<10; i++)
     {
-        cout << RawData[0][i] << " " << RawData[1][i] << " " << endl;
+        cout << IFData::RawData[0][i] << " " << IFData::RawData[1][i] << " " << endl;
     }
     cout << endl;
     
     cout << "startInd" << endl;
-    cout << startInd << endl;
+    cout << IFData::startInd << endl;
     cout << endl;
     
     cout << "endInd" << endl;
-    cout << endInd << endl;
+    cout << IFData::endInd << endl;
     cout << endl;
     
     cout << "Molecules" << endl;
@@ -296,25 +296,25 @@ void test4() {
 //            cout << MoleculesData[i].PeakData[j] << endl;
 //        }
         
-        for(int k = 0; k < MoleculesData[i].PeakData.size(); k++)
+        for(int k = 0; k < IFData::MoleculesData[i].PeakData.size(); k++)
         {
-            for(int l = 0; l < MoleculesData[i].PeakData[k].size(); l++)
+            for(int l = 0; l < IFData::MoleculesData[i].PeakData[k].size(); l++)
             {
-                cout << MoleculesData[i].PeakData[k][l] << " ";
+                cout << IFData::MoleculesData[i].PeakData[k][l] << " ";
                 //*(double *)(shapeField.data + Mat_SizeOf(shapeField.data_type) * l + Mat_SizeOf(shapeField.data_type) * m * shapeField.dims[0]);
             }
             cout << endl;
         }
         
-        cout << "name " << MoleculesData[i].name << endl;
-        cout << "minMass " << MoleculesData[i].minMass << endl;
-        cout << "maxMass " << MoleculesData[i].maxMass << endl;
-        cout << "com " << MoleculesData[i].com << endl;
-        cout << "minInd " << MoleculesData[i].minInd << endl;
-        cout << "maxInd " << MoleculesData[i].maxInd << endl;
-        cout << "area " << MoleculesData[i].area << endl;
-        cout << "areaError " << MoleculesData[i].areaError << endl;
-        cout << "rootIndex " << MoleculesData[i].rootIndex << endl;
+        cout << "name " << IFData::MoleculesData[i].name << endl;
+        cout << "minMass " << IFData::MoleculesData[i].minMass << endl;
+        cout << "maxMass " << IFData::MoleculesData[i].maxMass << endl;
+        cout << "com " << IFData::MoleculesData[i].com << endl;
+        cout << "minInd " << IFData::MoleculesData[i].minInd << endl;
+        cout << "maxInd " << IFData::MoleculesData[i].maxInd << endl;
+        cout << "area " << IFData::MoleculesData[i].area << endl;
+        cout << "areaError " << IFData::MoleculesData[i].areaError << endl;
+        cout << "rootIndex " << IFData::MoleculesData[i].rootIndex << endl;
         cout << endl;
     }
     
@@ -323,55 +323,55 @@ void test4() {
     cout << "comlist" << endl;
     for (int j=0; j<10; j++)
     {
-        cout << CalibrationData.COMList[j] << endl;
+        cout << IFData::CalibrationData.COMList[j] << endl;
     }
 
     cout << "MassOffsetList" << endl;
     for (int j=0; j<10; j++)
     {
-        cout << CalibrationData.MassOffsetList[j] << endl;
+        cout << IFData::CalibrationData.MassOffsetList[j] << endl;
     }
 
     cout << "ResolutionList" << endl;
     for (int j=0; j<10; j++)
     {
-        cout << CalibrationData.ResolutionList[j] << endl;
+        cout << IFData::CalibrationData.ResolutionList[j] << endl;
     }
-    cout << "MassOffsetMethod " << CalibrationData.MassOffsetMethod << endl;
-    cout << "ResolutionMethod " << CalibrationData.ResolutionMethod << endl;
-    cout << "massOffsetParam " << CalibrationData.massOffsetParam << endl;
-    cout << "resolutionParam " << CalibrationData.resolutionParam << endl;
+    cout << "MassOffsetMethod " << IFData::CalibrationData.MassOffsetMethod << endl;
+    cout << "ResolutionMethod " << IFData::CalibrationData.ResolutionMethod << endl;
+    cout << "massOffsetParam " << IFData::CalibrationData.massOffsetParam << endl;
+    cout << "resolutionParam " << IFData::CalibrationData.resolutionParam << endl;
 
     cout << "NameList" << endl;
     for (int j=0; j<10; j++)
     {
-        cout << CalibrationData.NameList[j] << endl;
+        cout << IFData::CalibrationData.NameList[j] << endl;
     }
     cout << endl;
         
     cout << "Shape" << endl;
-    cout << "form " << CalibrationData.Shape.form << endl;
+    cout << "form " << IFData::CalibrationData.Shape.form << endl;
     cout << "Breaks " << endl;
     for (int j=0; j<10; j++)
     {
-        cout << CalibrationData.Shape.Breaks[j] << endl;
+        cout << IFData::CalibrationData.Shape.Breaks[j] << endl;
     }
     
     cout << "Coefs " << endl;
-    for (int j=0; j<CalibrationData.Shape.Coefs.size(); j++)
+    for (int j=0; j<IFData::CalibrationData.Shape.Coefs.size(); j++)
     {
-        for (int k=0; k<CalibrationData.Shape.Coefs[j].size(); k++)
+        for (int k=0; k<IFData::CalibrationData.Shape.Coefs[j].size(); k++)
         {
-            cout << CalibrationData.Shape.Coefs[j][k] << "\t";
+            cout << IFData::CalibrationData.Shape.Coefs[j][k] << "\t";
         }
         cout << endl;
     }
     
-    cout << "pieces " << CalibrationData.Shape.pieces << endl;
+    cout << "pieces " << IFData::CalibrationData.Shape.pieces << endl;
 
-    cout << "order " << CalibrationData.Shape.order << endl;
+    cout << "order " << IFData::CalibrationData.Shape.order << endl;
     
-    cout << "dim " << CalibrationData.Shape.dim << endl;
+    cout << "dim " << IFData::CalibrationData.Shape.dim << endl;
 
     
     
@@ -395,37 +395,37 @@ void test4() {
     cout << endl;
 
     cout << "bgcorrection " << endl;
-    cout << "startMass " << BGCorrectionData.startMass << endl;
-    cout << "endMass " << BGCorrectionData.endMass << endl;
-    cout << "nDiv " << BGCorrectionData.nDiv << endl;
-    cout << "percent " << BGCorrectionData.percent << endl;
+    cout << "startMass " << IFData::BGCorrectionData.startMass << endl;
+    cout << "endMass " << IFData::BGCorrectionData.endMass << endl;
+    cout << "nDiv " << IFData::BGCorrectionData.nDiv << endl;
+    cout << "percent " << IFData::BGCorrectionData.percent << endl;
 
     cout << "Bgm " << endl;
     for (int j=0; j<10; j++)
     {
-        cout << BGCorrectionData.Bgm[j] << endl;
+        cout << IFData::BGCorrectionData.Bgm[j] << endl;
     }
     
     cout << "Bgy " << endl;
     for (int j=0; j<10; j++)
     {
-        cout << BGCorrectionData.Bgy[j] << endl;
+        cout << IFData::BGCorrectionData.Bgy[j] << endl;
     }
     
             cout << endl;
 
     cout << "gui " << endl;
-    for (int j=0; j<GUIStatus.size(); j++)
+    for (int j=0; j<IFData::GUIStatus.size(); j++)
     {
-        cout << GUIStatus[j] << endl;
+        cout << IFData::GUIStatus[j] << endl;
     }
     
     cout << endl;
 
-    cout << "originalFileName " << FileInfoData.originalFileName << endl;
-    cout << "fileName " << FileInfoData.fileName << endl;
-    cout << "pathName " << FileInfoData.pathName << endl;
-    cout << "h5CompletePath " << FileInfoData.h5CompletePath << endl;
+    cout << "originalFileName " << IFData::FileInfoData.originalFileName << endl;
+    cout << "fileName " << IFData::FileInfoData.fileName << endl;
+    cout << "pathName " << IFData::FileInfoData.pathName << endl;
+    cout << "h5CompletePath " << IFData::FileInfoData.h5CompletePath << endl;
     cout << endl;
 
 //    string originalFileName;

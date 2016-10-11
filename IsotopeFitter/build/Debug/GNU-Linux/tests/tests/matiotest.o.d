@@ -26,7 +26,9 @@ build/Debug/GNU-Linux/tests/tests/matiotest.o: tests/matiotest.cpp \
  /home/matlab/Michal/glibcinstall/include/alloca.h \
  /home/matlab/Michal/glibcinstall/include/bits/stdlib-float.h \
  src/IsotopeFitter.h src/../../IsotopeFitLib/include/IsotopeFitLib.h \
- src/../../IsotopeFitLib/include/matbin.h
+ src/../../IsotopeFitLib/include/HDF5Func.h \
+ src/../../IsotopeFitLib/include/ifdfile.h \
+ src/../../IsotopeFitLib/include/fitting.h
 
 /home/matlab/Michal/glibcinstall/include/stdc-predef.h:
 
@@ -84,4 +86,8 @@ src/IsotopeFitter.h:
 
 src/../../IsotopeFitLib/include/IsotopeFitLib.h:
 
-src/../../IsotopeFitLib/include/matbin.h:
+src/../../IsotopeFitLib/include/HDF5Func.h:
+
+src/../../IsotopeFitLib/include/ifdfile.h:
+
+src/../../IsotopeFitLib/include/fitting.h:

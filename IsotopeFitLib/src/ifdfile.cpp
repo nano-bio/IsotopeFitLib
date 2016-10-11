@@ -1,6 +1,11 @@
+//TODO: split LoadIFDFile into methods
+//TODO: rewrite data storage in gsl standard?
+
 /* Headers */
 #include "../include/ifdfile.h"
 #include <iostream>
+#include <exception>
+#include <fstream>
 
 /* Namespaces */
 using namespace std;
@@ -29,13 +34,65 @@ enum DataFields
     FILEINFO
 };
 
+/* Exceptions */
+class InvalidFilePathException : public exception
+{
+public:
+    InvalidFilePathException() {}
+    
+    virtual const char* what() const throw()
+    {
+        return "Specified path is not valid.";
+    }
+};
+
+class NotIFDFileException : public exception
+{
+public:
+    NotIFDFileException() {}
+    
+    virtual const char* what() const throw()
+    {
+        return "Specified file is not an IFD file.";
+    }
+};
+
+class InvalidIFDFileException : public exception
+{
+public:
+    InvalidIFDFileException() {}    
+    
+    virtual const char* what() const throw()
+    {
+        return "Specified file is not a valid IFD file.";
+    }
+};
+
 /* Exported functions */
 
 /* Loads data from IFD file into vectors. It is specifically tailored, if file format changes, we are doomed. */
 void LoadIFDFile(string fileName)
 {
+    /* Checks if the path is a valid one */
+    ifstream testPath(fileName);
+    if(!testPath)
+    {
+        throw InvalidFilePathException();
+    }           
+    
+    /* Checks if the file path points to something else than IFD file */
+    if(fileName.find(".ifd") == string::npos)
+    {
+        throw NotIFDFileException();
+    }
+    
     /* Loads the file with read-only privileges*/
     mat_t *file = Mat_Open(fileName.c_str(), MAT_ACC_RDONLY);
+    
+    if(NULL == file)
+    {
+        throw InvalidIFDFileException();
+    }
     
     /* Reads data for the root level structure, name of which is hardcoded "data" */
     matvar_t *topLevelStruct = Mat_VarRead(file, "data");
