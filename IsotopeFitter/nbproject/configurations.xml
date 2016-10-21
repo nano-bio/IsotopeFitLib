@@ -4,7 +4,10 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
-      <itemPath>src/IsotopeFitter.h</itemPath>
+      <itemPath>include/DebugUtils.h</itemPath>
+      <itemPath>include/DesignMatrix.h</itemPath>
+      <itemPath>include/IsotopeFitter.h</itemPath>
+      <itemPath>include/LeastSquares.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -13,7 +16,11 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
+      <itemPath>src/DebugUtils.cpp</itemPath>
+      <itemPath>src/DesignMatrix.cpp</itemPath>
       <itemPath>src/IsotopeFitter.cpp</itemPath>
+      <itemPath>src/LeastSquares.cpp</itemPath>
+      <itemPath>storage/Snippets.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
                    displayName="Test Files"
@@ -24,6 +31,12 @@
                      projectFiles="true"
                      kind="TEST">
         <itemPath>tests/fittingtest.cpp</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f5"
+                     displayName="fittingtest2"
+                     projectFiles="true"
+                     kind="TEST">
+        <itemPath>tests/fittingtest2.cpp</itemPath>
       </logicalFolder>
       <logicalFolder name="f1" displayName="gsltest" projectFiles="true" kind="TEST">
         <itemPath>tests/gsltest.cpp</itemPath>
@@ -36,6 +49,12 @@
                      projectFiles="true"
                      kind="TEST">
         <itemPath>tests/matiotest.cpp</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f6"
+                     displayName="qrfittingdemo"
+                     projectFiles="true"
+                     kind="TEST">
+        <itemPath>tests/qrfittingdemo.cpp</itemPath>
       </logicalFolder>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
@@ -63,7 +82,7 @@
             <pElem>/usr/local/include</pElem>
             <pElem>/home/matlab/Michal/glibcinstall/include</pElem>
           </incDir>
-          <commandLine>-g -O0</commandLine>
+          <commandLine>-g -O0 -DDEBUG</commandLine>
           <warningLevel>2</warningLevel>
         </ccTool>
         <linkerTool>
@@ -72,7 +91,7 @@
             <pElem>/home/matlab/Michal/glibcinstall/lib</pElem>
           </linkerAddLib>
           <linkerLibItems>
-            <linkerLibFileItem>../IsotopeFitLib/dist/Debug/GNU-Linux/libisotopefitlib.a</linkerLibFileItem>
+            <linkerLibFileItem>../IsotopeFitLib/dist/Debug/GNU-Linux/libifl.a</linkerLibFileItem>
             <linkerLibFileItem>/usr/local/lib/libhdf5_cpp.a</linkerLibFileItem>
             <linkerLibFileItem>/usr/local/lib/libhdf5.a</linkerLibFileItem>
             <linkerLibFileItem>/usr/local/lib/libmatio.a</linkerLibFileItem>
@@ -151,17 +170,67 @@
           <commandLine>-static</commandLine>
         </linkerTool>
       </folder>
+      <folder path="TestFiles/f5">
+        <cTool>
+          <incDir>
+            <pElem>.</pElem>
+          </incDir>
+        </cTool>
+        <ccTool>
+          <incDir>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f5</output>
+          <commandLine>-static</commandLine>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f6">
+        <cTool>
+          <incDir>
+            <pElem>.</pElem>
+          </incDir>
+        </cTool>
+        <ccTool>
+          <incDir>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f6</output>
+          <commandLine>-static</commandLine>
+        </linkerTool>
+      </folder>
+      <item path="include/DebugUtils.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/DesignMatrix.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/IsotopeFitter.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/LeastSquares.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/DebugUtils.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/DesignMatrix.cpp" ex="false" tool="1" flavor2="0">
+      </item>
       <item path="src/IsotopeFitter.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="src/IsotopeFitter.h" ex="false" tool="3" flavor2="0">
+      <item path="src/LeastSquares.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="storage/Snippets.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="tests/fittingtest.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/fittingtest2.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="tests/gsltest.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="tests/h5openread.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="tests/matiotest.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/qrfittingdemo.cpp" ex="false" tool="1" flavor2="0">
       </item>
     </conf>
     <conf name="Release" type="1">
@@ -176,12 +245,13 @@
           <standard>10</standard>
         </cTool>
         <ccTool>
-          <developmentMode>5</developmentMode>
+          <developmentMode>6</developmentMode>
           <standard>11</standard>
+          <commandlineTool>g++</commandlineTool>
           <incDir>
             <pElem>/usr/local/include</pElem>
           </incDir>
-          <commandLine>-g -O0</commandLine>
+          <commandLine>-DRELEASE -DHAVE_INLINE</commandLine>
           <warningLevel>2</warningLevel>
         </ccTool>
         <fortranCompilerTool>
@@ -195,7 +265,7 @@
             <pElem>/usr/local/lib</pElem>
           </linkerAddLib>
           <linkerLibItems>
-            <linkerLibFileItem>../IsotopeFitLib/dist/Release/GNU-Linux/libisotopefitlib.a</linkerLibFileItem>
+            <linkerLibFileItem>../IsotopeFitLib/dist/Release/GNU-Linux/libifl.a</linkerLibFileItem>
             <linkerLibFileItem>/usr/local/lib/libhdf5_cpp.a</linkerLibFileItem>
             <linkerLibFileItem>/usr/local/lib/libhdf5.a</linkerLibFileItem>
             <linkerLibFileItem>/usr/local/lib/libmatio.a</linkerLibFileItem>
@@ -270,17 +340,65 @@
           <output>${TESTDIR}/TestFiles/f4</output>
         </linkerTool>
       </folder>
+      <folder path="TestFiles/f5">
+        <cTool>
+          <incDir>
+            <pElem>.</pElem>
+          </incDir>
+        </cTool>
+        <ccTool>
+          <incDir>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f5</output>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f6">
+        <cTool>
+          <incDir>
+            <pElem>.</pElem>
+          </incDir>
+        </cTool>
+        <ccTool>
+          <incDir>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f6</output>
+        </linkerTool>
+      </folder>
+      <item path="include/DebugUtils.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/DesignMatrix.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/IsotopeFitter.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/LeastSquares.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/DebugUtils.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/DesignMatrix.cpp" ex="false" tool="1" flavor2="0">
+      </item>
       <item path="src/IsotopeFitter.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="src/IsotopeFitter.h" ex="false" tool="3" flavor2="0">
+      <item path="src/LeastSquares.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="storage/Snippets.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="tests/fittingtest.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/fittingtest2.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="tests/gsltest.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="tests/h5openread.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="tests/matiotest.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/qrfittingdemo.cpp" ex="false" tool="1" flavor2="0">
       </item>
     </conf>
   </confs>

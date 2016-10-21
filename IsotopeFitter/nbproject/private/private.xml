@@ -13,9 +13,6 @@
         </group>
         <group>
             <file>file:/home/matlab/Michal/dev/IsotopeFitter/src/IsotopeFitter.cpp</file>
-            <file>file:/home/matlab/Michal/dev/IsotopeFitter/src/IsotopeFitter.h</file>
-            <file>file:/home/matlab/Michal/dev/IsotopeFitter/tests/fittingtest.cpp</file>
-            <file>file:/home/matlab/Michal/dev/IsotopeFitter/tests/gsltest.cpp</file>
         </group>
     </open-files>
 </project-private>

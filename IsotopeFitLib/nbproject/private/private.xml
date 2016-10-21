@@ -16,14 +16,6 @@
             <file>file:/home/matlab/Michal/dev/IsotopeFitLib/src/MatBinFunc.cpp</file>
             <file>file:/home/matlab/Michal/dev/IsotopeFitLib/src/HDF5Func.cpp</file>
         </group>
-        <group>
-            <file>file:/home/matlab/Michal/dev/IsotopeFitLib/include/fitting.h</file>
-            <file>file:/home/matlab/Michal/dev/IsotopeFitLib/include/ifdfile.h</file>
-            <file>file:/home/matlab/Michal/dev/IsotopeFitLib/src/ifdfile.cpp</file>
-            <file>file:/home/matlab/Michal/dev/IsotopeFitLib/include/HDF5Func.h</file>
-            <file>file:/home/matlab/Michal/dev/IsotopeFitLib/include/IsotopeFitLib.h</file>
-            <file>file:/home/matlab/Michal/dev/IsotopeFitLib/src/HDF5Func.cpp</file>
-            <file>file:/home/matlab/Michal/dev/IsotopeFitLib/src/fitting.cpp</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>

@@ -1,12 +1,25 @@
 build/Release/GNU-Linux/src/IsotopeFitter.o: src/IsotopeFitter.cpp \
- src/IsotopeFitter.h src/../../IsotopeFitLib/include/IsotopeFitLib.h \
- src/../../IsotopeFitLib/include/ifdfile.h \
- src/../../IsotopeFitLib/include/fitting.h
+ src/../include/IsotopeFitter.h \
+ src/../include/../../IsotopeFitLib/include/ifl.h \
+ src/../include/../../IsotopeFitLib/include/ifl_ifdfile.h \
+ src/../include/../../IsotopeFitLib/include/ifl_data.h \
+ src/../include/../../IsotopeFitLib/include/ifl_dataprocessing.h \
+ src/../include/../include/DesignMatrix.h \
+ src/../include/../include/../../IsotopeFitLib/include/ifl_data.h \
+ src/../include/../include/LeastSquares.h
 
-src/IsotopeFitter.h:
+src/../include/IsotopeFitter.h:
 
-src/../../IsotopeFitLib/include/IsotopeFitLib.h:
+src/../include/../../IsotopeFitLib/include/ifl.h:
 
-src/../../IsotopeFitLib/include/ifdfile.h:
+src/../include/../../IsotopeFitLib/include/ifl_ifdfile.h:
 
-src/../../IsotopeFitLib/include/fitting.h:
+src/../include/../../IsotopeFitLib/include/ifl_data.h:
+
+src/../include/../../IsotopeFitLib/include/ifl_dataprocessing.h:
+
+src/../include/../include/DesignMatrix.h:
+
+src/../include/../include/../../IsotopeFitLib/include/ifl_data.h:
+
+src/../include/../include/LeastSquares.h:

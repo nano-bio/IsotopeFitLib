@@ -35,17 +35,18 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/src/HDF5Func.o \
-	${OBJECTDIR}/src/fitting.o \
-	${OBJECTDIR}/src/ifdfile.o
+	${OBJECTDIR}/src/ifl_data.o \
+	${OBJECTDIR}/src/ifl_dataprocessing.o \
+	${OBJECTDIR}/src/ifl_h5file.o \
+	${OBJECTDIR}/src/ifl_ifdfile.o
 
 
 # C Compiler Flags
 CFLAGS=
 
 # CC Compiler Flags
-CCFLAGS=
-CXXFLAGS=
+CCFLAGS=-O0
+CXXFLAGS=-O0
 
 # Fortran Compiler Flags
 FFLAGS=
@@ -58,28 +59,33 @@ LDLIBSOPTIONS=
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
-	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libisotopefitlib.a
+	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libifl.a
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libisotopefitlib.a: ${OBJECTFILES}
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libifl.a: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
-	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libisotopefitlib.a
-	${AR} -rv ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libisotopefitlib.a ${OBJECTFILES} 
-	$(RANLIB) ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libisotopefitlib.a
+	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libifl.a
+	${AR} -rv ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libifl.a ${OBJECTFILES} 
+	$(RANLIB) ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libifl.a
 
-${OBJECTDIR}/src/HDF5Func.o: src/HDF5Func.cpp 
+${OBJECTDIR}/src/ifl_data.o: src/ifl_data.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -std=c++14 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/HDF5Func.o src/HDF5Func.cpp
+	$(COMPILE.cc) -g -std=c++14 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/ifl_data.o src/ifl_data.cpp
 
-${OBJECTDIR}/src/fitting.o: src/fitting.cpp 
+${OBJECTDIR}/src/ifl_dataprocessing.o: src/ifl_dataprocessing.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -std=c++14 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/fitting.o src/fitting.cpp
+	$(COMPILE.cc) -g -std=c++14 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/ifl_dataprocessing.o src/ifl_dataprocessing.cpp
 
-${OBJECTDIR}/src/ifdfile.o: src/ifdfile.cpp 
+${OBJECTDIR}/src/ifl_h5file.o: src/ifl_h5file.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -std=c++14 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/ifdfile.o src/ifdfile.cpp
+	$(COMPILE.cc) -g -std=c++14 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/ifl_h5file.o src/ifl_h5file.cpp
+
+${OBJECTDIR}/src/ifl_ifdfile.o: src/ifl_ifdfile.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -std=c++14 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/ifl_ifdfile.o src/ifl_ifdfile.cpp
 
 # Subprojects
 .build-subprojects:
@@ -87,7 +93,7 @@ ${OBJECTDIR}/src/ifdfile.o: src/ifdfile.cpp
 # Clean Targets
 .clean-conf: ${CLEAN_SUBPROJECTS}
 	${RM} -r ${CND_BUILDDIR}/${CND_CONF}
-	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libisotopefitlib.a
+	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libifl.a
 
 # Subprojects
 .clean-subprojects:

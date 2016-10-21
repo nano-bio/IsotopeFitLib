@@ -9,16 +9,16 @@ CND_DISTDIR=dist
 # Debug configuration
 CND_PLATFORM_Debug=GNU-Linux
 CND_ARTIFACT_DIR_Debug=dist/Debug/GNU-Linux
-CND_ARTIFACT_NAME_Debug=libisotopefitlib.a
-CND_ARTIFACT_PATH_Debug=dist/Debug/GNU-Linux/libisotopefitlib.a
+CND_ARTIFACT_NAME_Debug=libifl.a
+CND_ARTIFACT_PATH_Debug=dist/Debug/GNU-Linux/libifl.a
 CND_PACKAGE_DIR_Debug=dist/Debug/GNU-Linux/package
 CND_PACKAGE_NAME_Debug=IsotopeFitLib.tar
 CND_PACKAGE_PATH_Debug=dist/Debug/GNU-Linux/package/IsotopeFitLib.tar
 # Release configuration
 CND_PLATFORM_Release=GNU-Linux
 CND_ARTIFACT_DIR_Release=dist/Release/GNU-Linux
-CND_ARTIFACT_NAME_Release=libisotopefitlib.a
-CND_ARTIFACT_PATH_Release=dist/Release/GNU-Linux/libisotopefitlib.a
+CND_ARTIFACT_NAME_Release=libifl.a
+CND_ARTIFACT_PATH_Release=dist/Release/GNU-Linux/libifl.a
 CND_PACKAGE_DIR_Release=dist/Release/GNU-Linux/package
 CND_PACKAGE_NAME_Release=IsotopeFitLib.tar
 CND_PACKAGE_PATH_Release=dist/Release/GNU-Linux/package/IsotopeFitLib.tar
