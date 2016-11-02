@@ -36,25 +36,10 @@ IsotopeFitLib and IsotopeFitter development environment setup instructions
 
 	1.5) Libc 2.24 libdl.a and libc.a might already be installed on your system. If not:
 		% sudo apt-get install libc6-dev
-<<<<<<< HEAD
-=======
-		This might not be enough, as it probably does not install static libraries. In that case:
-
-		a) Download link http://ftp.gnu.org/gnu/glibc/glibc-2.24.tar.gz
-		b) Create separate folder for build and another for the installation
-		c) Run commands in the created folder
-			% ../glibc-2.24/configure --prefix=/path_to_the_installation_folder
-			% make
-	       Optional:% make check
-			% make install
-
-			Reason for separate build directory is to easily clean up if something goes wrong during the build. Separate and most importantly non-system installation folder is to protect your linux installation from catastrophic accidents.
->>>>>>> b9b9331e4ee44888e898fa10a272b32b4f8eab4b
 			
         1.6) Matio 1.5.9
                 a) Download link https://sourceforge.net/projects/matio/files/latest/download
                 b) Run commands
-<<<<<<< HEAD
                         % ./configure --with-zlib=/usr/local --with-hdf5=/usr/local --with-default-file-ver=5
                         % make
                         % make check
@@ -71,13 +56,6 @@ IsotopeFitLib and IsotopeFitter development environment setup instructions
                         % cmake ..
                         % sudo make
                         % sudo install
-                     
-=======
-                        % ./configure --with-zlib=/usr/local --with-default-file-ver=5
-                        % make
-                        % make check
-                        % make install
->>>>>>> b9b9331e4ee44888e898fa10a272b32b4f8eab4b
 
 2) The IsotopeFitter needs following library files linked:
 	libisotopefitlib.a
