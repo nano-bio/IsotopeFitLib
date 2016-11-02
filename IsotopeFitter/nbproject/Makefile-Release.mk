@@ -76,7 +76,7 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=-L/usr/local/lib ../IsotopeFitLib/dist/Release/GNU-Linux/libifl.a /usr/local/lib/libhdf5_cpp.a /usr/local/lib/libhdf5.a /usr/local/lib/libmatio.a /usr/local/lib/libsz.a /usr/local/lib/libz.a ../../glibcinstall/lib/libdl.a ../../glibcinstall/lib/libc.a /usr/local/lib/libgsl.a /usr/local/lib/libgslcblas.a
+LDLIBSOPTIONS=-L/usr/local/lib ../IsotopeFitLib/dist/Release/GNU-Linux/libifl.a /usr/local/lib/libmatio.a /usr/local/lib/libhdf5_cpp.a /usr/local/lib/libhdf5.a /usr/local/lib/libsz.a /usr/local/lib/libz.a /usr/lib/x86_64-linux-gnu/libc.a /usr/lib/x86_64-linux-gnu/libdl.a /usr/local/lib/libgsl.a /usr/local/lib/libgslcblas.a
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
@@ -84,19 +84,19 @@ LDLIBSOPTIONS=-L/usr/local/lib ../IsotopeFitLib/dist/Release/GNU-Linux/libifl.a 
 
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/isotopefitter: ../IsotopeFitLib/dist/Release/GNU-Linux/libifl.a
 
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/isotopefitter: /usr/local/lib/libmatio.a
+
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/isotopefitter: /usr/local/lib/libhdf5_cpp.a
 
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/isotopefitter: /usr/local/lib/libhdf5.a
-
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/isotopefitter: /usr/local/lib/libmatio.a
 
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/isotopefitter: /usr/local/lib/libsz.a
 
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/isotopefitter: /usr/local/lib/libz.a
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/isotopefitter: ../../glibcinstall/lib/libdl.a
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/isotopefitter: /usr/lib/x86_64-linux-gnu/libc.a
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/isotopefitter: ../../glibcinstall/lib/libc.a
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/isotopefitter: /usr/lib/x86_64-linux-gnu/libdl.a
 
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/isotopefitter: /usr/local/lib/libgsl.a
 
@@ -106,27 +106,27 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/isotopefitter: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/isotopefitter ${OBJECTFILES} ${LDLIBSOPTIONS} -static
 
-${OBJECTDIR}/src/DebugUtils.o: src/DebugUtils.cpp 
+${OBJECTDIR}/src/DebugUtils.o: src/DebugUtils.cpp
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
 	$(COMPILE.cc) -O3 -Wall -I/usr/local/include -std=c++14 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/DebugUtils.o src/DebugUtils.cpp
 
-${OBJECTDIR}/src/DesignMatrix.o: src/DesignMatrix.cpp 
+${OBJECTDIR}/src/DesignMatrix.o: src/DesignMatrix.cpp
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
 	$(COMPILE.cc) -O3 -Wall -I/usr/local/include -std=c++14 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/DesignMatrix.o src/DesignMatrix.cpp
 
-${OBJECTDIR}/src/IsotopeFitter.o: src/IsotopeFitter.cpp 
+${OBJECTDIR}/src/IsotopeFitter.o: src/IsotopeFitter.cpp
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
 	$(COMPILE.cc) -O3 -Wall -I/usr/local/include -std=c++14 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/IsotopeFitter.o src/IsotopeFitter.cpp
 
-${OBJECTDIR}/src/LeastSquares.o: src/LeastSquares.cpp 
+${OBJECTDIR}/src/LeastSquares.o: src/LeastSquares.cpp
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
 	$(COMPILE.cc) -O3 -Wall -I/usr/local/include -std=c++14 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/LeastSquares.o src/LeastSquares.cpp
 
-${OBJECTDIR}/storage/Snippets.o: storage/Snippets.cpp 
+${OBJECTDIR}/storage/Snippets.o: storage/Snippets.cpp
 	${MKDIR} -p ${OBJECTDIR}/storage
 	${RM} "$@.d"
 	$(COMPILE.cc) -O3 -Wall -I/usr/local/include -std=c++14 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/storage/Snippets.o storage/Snippets.cpp
@@ -140,27 +140,27 @@ ${OBJECTDIR}/storage/Snippets.o: storage/Snippets.cpp
 
 ${TESTDIR}/TestFiles/f3: ${TESTDIR}/tests/fittingtest.o ${OBJECTFILES:%.o=%_nomain.o}
 	${MKDIR} -p ${TESTDIR}/TestFiles
-	${LINK.cc}   -o ${TESTDIR}/TestFiles/f3 $^ ${LDLIBSOPTIONS} 
+	${LINK.cc} -o ${TESTDIR}/TestFiles/f3 $^ ${LDLIBSOPTIONS}   
 
 ${TESTDIR}/TestFiles/f5: ${TESTDIR}/tests/fittingtest2.o ${OBJECTFILES:%.o=%_nomain.o}
 	${MKDIR} -p ${TESTDIR}/TestFiles
-	${LINK.cc}   -o ${TESTDIR}/TestFiles/f5 $^ ${LDLIBSOPTIONS} 
+	${LINK.cc} -o ${TESTDIR}/TestFiles/f5 $^ ${LDLIBSOPTIONS}   
 
 ${TESTDIR}/TestFiles/f1: ${TESTDIR}/tests/gsltest.o ${OBJECTFILES:%.o=%_nomain.o}
 	${MKDIR} -p ${TESTDIR}/TestFiles
-	${LINK.cc}  -static -o ${TESTDIR}/TestFiles/f1 $^ ${LDLIBSOPTIONS} 
+	${LINK.cc} -o ${TESTDIR}/TestFiles/f1 $^ ${LDLIBSOPTIONS}  -static 
 
 ${TESTDIR}/TestFiles/f2: ${TESTDIR}/tests/h5openread.o ${OBJECTFILES:%.o=%_nomain.o}
 	${MKDIR} -p ${TESTDIR}/TestFiles
-	${LINK.cc}   -o ${TESTDIR}/TestFiles/f2 $^ ${LDLIBSOPTIONS} 
+	${LINK.cc} -o ${TESTDIR}/TestFiles/f2 $^ ${LDLIBSOPTIONS}   
 
 ${TESTDIR}/TestFiles/f4: ${TESTDIR}/tests/matiotest.o ${OBJECTFILES:%.o=%_nomain.o}
 	${MKDIR} -p ${TESTDIR}/TestFiles
-	${LINK.cc}   -o ${TESTDIR}/TestFiles/f4 $^ ${LDLIBSOPTIONS} 
+	${LINK.cc} -o ${TESTDIR}/TestFiles/f4 $^ ${LDLIBSOPTIONS}   
 
 ${TESTDIR}/TestFiles/f6: ${TESTDIR}/tests/qrfittingdemo.o ${OBJECTFILES:%.o=%_nomain.o}
 	${MKDIR} -p ${TESTDIR}/TestFiles
-	${LINK.cc}   -o ${TESTDIR}/TestFiles/f6 $^ ${LDLIBSOPTIONS} 
+	${LINK.cc} -o ${TESTDIR}/TestFiles/f6 $^ ${LDLIBSOPTIONS}   
 
 
 ${TESTDIR}/tests/fittingtest.o: tests/fittingtest.cpp 
@@ -281,7 +281,6 @@ ${OBJECTDIR}/storage/Snippets_nomain.o: ${OBJECTDIR}/storage/Snippets.o storage/
 # Clean Targets
 .clean-conf: ${CLEAN_SUBPROJECTS}
 	${RM} -r ${CND_BUILDDIR}/${CND_CONF}
-	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/isotopefitter
 
 # Subprojects
 .clean-subprojects:

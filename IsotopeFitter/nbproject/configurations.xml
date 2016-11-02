@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<configurationDescriptor version="97">
+<configurationDescriptor version="100">
   <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
@@ -80,7 +80,7 @@
           <standard>11</standard>
           <incDir>
             <pElem>/usr/local/include</pElem>
-            <pElem>/home/matlab/Michal/glibcinstall/include</pElem>
+            <pElem>../install/libcinstall/include</pElem>
           </incDir>
           <commandLine>-g -O0 -DDEBUG</commandLine>
           <warningLevel>2</warningLevel>
@@ -88,17 +88,17 @@
         <linkerTool>
           <linkerAddLib>
             <pElem>/usr/local/lib</pElem>
-            <pElem>/home/matlab/Michal/glibcinstall/lib</pElem>
+            <pElem>../install/libcinstall/lib</pElem>
           </linkerAddLib>
           <linkerLibItems>
             <linkerLibFileItem>../IsotopeFitLib/dist/Debug/GNU-Linux/libifl.a</linkerLibFileItem>
-            <linkerLibFileItem>/usr/local/lib/libhdf5_cpp.a</linkerLibFileItem>
-            <linkerLibFileItem>/usr/local/lib/libhdf5.a</linkerLibFileItem>
             <linkerLibFileItem>/usr/local/lib/libmatio.a</linkerLibFileItem>
+            <linkerLibFileItem>/usr/local/lib/libhdf5.a</linkerLibFileItem>
+            <linkerLibFileItem>/usr/local/lib/libhdf5_cpp.a</linkerLibFileItem>
             <linkerLibFileItem>/usr/local/lib/libsz.a</linkerLibFileItem>
             <linkerLibFileItem>/usr/local/lib/libz.a</linkerLibFileItem>
-            <linkerLibFileItem>/home/matlab/Michal/glibcinstall/lib/libdl.a</linkerLibFileItem>
-            <linkerLibFileItem>/home/matlab/Michal/glibcinstall/lib/libc.a</linkerLibFileItem>
+            <linkerLibFileItem>/usr/lib/x86_64-linux-gnu/libc.a</linkerLibFileItem>
+            <linkerLibFileItem>/usr/lib/x86_64-linux-gnu/libdl.a</linkerLibFileItem>
             <linkerLibFileItem>/usr/local/lib/libgsl.a</linkerLibFileItem>
             <linkerLibFileItem>/usr/local/lib/libgslcblas.a</linkerLibFileItem>
           </linkerLibItems>
@@ -266,13 +266,13 @@
           </linkerAddLib>
           <linkerLibItems>
             <linkerLibFileItem>../IsotopeFitLib/dist/Release/GNU-Linux/libifl.a</linkerLibFileItem>
+            <linkerLibFileItem>/usr/local/lib/libmatio.a</linkerLibFileItem>
             <linkerLibFileItem>/usr/local/lib/libhdf5_cpp.a</linkerLibFileItem>
             <linkerLibFileItem>/usr/local/lib/libhdf5.a</linkerLibFileItem>
-            <linkerLibFileItem>/usr/local/lib/libmatio.a</linkerLibFileItem>
             <linkerLibFileItem>/usr/local/lib/libsz.a</linkerLibFileItem>
             <linkerLibFileItem>/usr/local/lib/libz.a</linkerLibFileItem>
-            <linkerLibFileItem>../../glibcinstall/lib/libdl.a</linkerLibFileItem>
-            <linkerLibFileItem>../../glibcinstall/lib/libc.a</linkerLibFileItem>
+            <linkerLibFileItem>/usr/lib/x86_64-linux-gnu/libc.a</linkerLibFileItem>
+            <linkerLibFileItem>/usr/lib/x86_64-linux-gnu/libdl.a</linkerLibFileItem>
             <linkerLibFileItem>/usr/local/lib/libgsl.a</linkerLibFileItem>
             <linkerLibFileItem>/usr/local/lib/libgslcblas.a</linkerLibFileItem>
           </linkerLibItems>

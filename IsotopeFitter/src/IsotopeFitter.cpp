@@ -40,7 +40,7 @@ int main(int argc, char** argv)
 #endif
     
     /* Load data from IFD file */
-    string str = "/home/matlab/Michal/dev/IsotopeFitter/tests/finaltestfile.ifd";
+    string str = "/home/michal/Robota/IsotopeFit/IsotopeFitter/tests/finaltestfile.ifd";
     LoadIFDFile(str);
     
     /* Variable initializations needed for calibration */

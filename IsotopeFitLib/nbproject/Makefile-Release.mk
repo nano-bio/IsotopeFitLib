@@ -67,22 +67,22 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libifl.a: ${OBJECTFILES}
 	${AR} -rv ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libifl.a ${OBJECTFILES} 
 	$(RANLIB) ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libifl.a
 
-${OBJECTDIR}/src/ifl_data.o: src/ifl_data.cpp 
+${OBJECTDIR}/src/ifl_data.o: src/ifl_data.cpp
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
 	$(COMPILE.cc) -O3 -std=c++14 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/ifl_data.o src/ifl_data.cpp
 
-${OBJECTDIR}/src/ifl_dataprocessing.o: src/ifl_dataprocessing.cpp 
+${OBJECTDIR}/src/ifl_dataprocessing.o: src/ifl_dataprocessing.cpp
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
 	$(COMPILE.cc) -O3 -std=c++14 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/ifl_dataprocessing.o src/ifl_dataprocessing.cpp
 
-${OBJECTDIR}/src/ifl_h5file.o: src/ifl_h5file.cpp 
+${OBJECTDIR}/src/ifl_h5file.o: src/ifl_h5file.cpp
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
 	$(COMPILE.cc) -O3 -std=c++14 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/ifl_h5file.o src/ifl_h5file.cpp
 
-${OBJECTDIR}/src/ifl_ifdfile.o: src/ifl_ifdfile.cpp 
+${OBJECTDIR}/src/ifl_ifdfile.o: src/ifl_ifdfile.cpp
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
 	$(COMPILE.cc) -O3 -std=c++14 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/ifl_ifdfile.o src/ifl_ifdfile.cpp
@@ -93,7 +93,6 @@ ${OBJECTDIR}/src/ifl_ifdfile.o: src/ifl_ifdfile.cpp
 # Clean Targets
 .clean-conf: ${CLEAN_SUBPROJECTS}
 	${RM} -r ${CND_BUILDDIR}/${CND_CONF}
-	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libifl.a
 
 # Subprojects
 .clean-subprojects:
