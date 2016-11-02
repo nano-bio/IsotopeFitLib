@@ -29,9 +29,8 @@ cd gsl-2.2.1
 make
 make install
 cd ..
-https://sourceforge.net/projects/matio/files/latest/download
-mv download download.7z
-p7zip -d download.7z
+wget http://downloads.sourceforge.net/project/matio/matio/1.5.9/matio-1.5.9.7z
+p7zip -d matio-1.5.9.7z
 chmod a+x matio-1.5.9 -R
 cd matio-1.5.9
 ./configure --with-zlib=/usr/local --with-default-file-ver=5
