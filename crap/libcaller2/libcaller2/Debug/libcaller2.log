@@ -1,4 +1,0 @@
-﻿  Source.cpp
-Source.obj : error LNK2019: unresolved external symbol __imp__Add referenced in function _main
-Source.obj : error LNK2019: unresolved external symbol __imp__Function referenced in function _main
-D:\Robota\Innsbruck\LibCaller2\Debug\LibCaller2.exe : fatal error LNK1120: 2 unresolved externals
