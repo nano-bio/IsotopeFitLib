@@ -1,7 +1,0 @@
-D:\Robota\Innsbruck\git\IsotopeFitLib\nugetCreateTest\nugetCreateTest\bin\Debug\nugetCreateTest.exe.config
-D:\Robota\Innsbruck\git\IsotopeFitLib\nugetCreateTest\nugetCreateTest\bin\Debug\nugetCreateTest.exe
-D:\Robota\Innsbruck\git\IsotopeFitLib\nugetCreateTest\nugetCreateTest\bin\Debug\nugetCreateTest.pdb
-D:\Robota\Innsbruck\git\IsotopeFitLib\nugetCreateTest\nugetCreateTest\bin\Debug\HDF5DotNet.dll
-D:\Robota\Innsbruck\git\IsotopeFitLib\nugetCreateTest\nugetCreateTest\obj\Debug\nugetCreateTest.csprojResolveAssemblyReference.cache
-D:\Robota\Innsbruck\git\IsotopeFitLib\nugetCreateTest\nugetCreateTest\obj\Debug\nugetCreateTest.exe
-D:\Robota\Innsbruck\git\IsotopeFitLib\nugetCreateTest\nugetCreateTest\obj\Debug\nugetCreateTest.pdb
