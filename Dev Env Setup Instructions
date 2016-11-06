@@ -57,13 +57,13 @@ IsotopeFitLib and IsotopeFitter development environment setup instructions
                         % sudo make
                         % sudo install
 
-2) The IsotopeFitter needs following library files linked:
-	libisotopefitlib.a
-	libhdf5_cpp.a
-	libhdf5.a
-	libsz.a
-	libz.a
-	libc.a
-	libdl.a
-	libgsl.a
-	libgslcblas.a
+2) Building IsotopeFitLib
+    a) run commands in the project directory
+            % cmake .
+            % make
+            
+3) Building IsotopeFitter
+    a) run commands in the project directory
+            % cmake .
+            % make
+    The executable will be in the ./bin directory
