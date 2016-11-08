@@ -1,4 +1,4 @@
-apt-get -y install wget gcc make g++ libc6-dev p7zip cmake libmpich2-dev
+apt-get -y install wget gcc make g++ libc6-dev p7zip cmake libmpich-dev
 mkdir dependencies
 cd dependencies
 wget ftp://ftp.hdfgroup.org/lib-external/szip/2.1/src/szip-2.1.tar.gz
