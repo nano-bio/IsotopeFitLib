@@ -1,4 +1,4 @@
-apt-get -y install wget gcc make g++ libc6-dev p7zip
+apt-get -y install wget gcc make g++ libc6-dev p7zip cmake libmpich2-dev
 mkdir dependencies
 cd dependencies
 wget ftp://ftp.hdfgroup.org/lib-external/szip/2.1/src/szip-2.1.tar.gz
@@ -35,5 +35,22 @@ chmod a+x matio-1.5.9 -R
 cd matio-1.5.9
 ./configure --with-zlib=/usr/local --with-default-file-ver=5
 make
+make check
 make install
+cd ..
+wget http://libelemental.org/pub/releases/Elemental-0.85.tgz
+tar xfvz Elemental-0.85.tgz
+cd Elemental-0.85
+mkdir build
+cd build
+cmake ..
+make
+install
+cd ..
 cd ../..
+cd IsotopeFitLib
+cmake .
+make
+cd ../IsotopeFitter
+cmake .
+make
