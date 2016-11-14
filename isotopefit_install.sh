@@ -38,14 +38,13 @@ make
 make check
 make install
 cd ..
-wget http://libelemental.org/pub/releases/Elemental-0.85.tgz
-tar xfvz Elemental-0.85.tgz
-cd Elemental-0.85
+git clone git://github.com/elemental/Elemental.git
+cd Elemental
 mkdir build
 cd build
 cmake ..
 make
-install
+make install
 cd ..
 cd ../..
 cd IsotopeFitLib
