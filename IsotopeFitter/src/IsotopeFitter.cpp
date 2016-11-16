@@ -13,8 +13,13 @@
  */
 
 #include "../include/IsotopeFitter.h"
+#include <boost/program_options.hpp>
+#include <string>
+#include <iostream>
+#include <iterator>
 
 using namespace std;
+namespace po = boost::program_options;
 
 /* Global variables */
 int fnResult;   //for function return codes
@@ -39,9 +44,30 @@ int main(int argc, char** argv)
     tic();
 #endif
     
+    /* program options to specify IFD file */
+    string ifdfile;
+    po::options_description desc("Allowed Options");
+    desc.add_options()
+        ("input-file", po::value<string>(), "input file")
+    ;
+    po::positional_options_description p;
+    p.add("input-file", -1);
+
+    po::variables_map vm;
+    po::store(po::command_line_parser(argc, argv).options(desc).positional(p).run(), vm);
+    po::notify(vm);
+
+    // did we get a filename?
+    if (vm.count("input-file")) {
+        cout << "Using input file: " << vm["input-file"].as<string>() << endl;
+        ifdfile = vm["input-file"].as<string>();
+    } else {
+        cout << "No input file given. Terminating." << endl;
+        return -1;
+    }
+
     /* Load data from IFD file */
-    string str = "/home/michal/Robota/IsotopeFit/IsotopeFitter/tests/finaltestfile.ifd";
-    LoadIFDFile(str);
+    LoadIFDFile(ifdfile);
     
     /* Variable initializations needed for calibration */
     size_t dataLength = IFData::RawData[0].size();
